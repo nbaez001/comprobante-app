@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rcomprobante" pageWidth="208" pageHeight="310" columnWidth="194" leftMargin="7" rightMargin="7" topMargin="1" bottomMargin="1" isIgnorePagination="true" uuid="f7e301cc-1e7b-47c2-9a93-a68a4f1d5d19">
+	<property name="ireport.zoom" value="1.3995221406292035"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="pLogoEmpresa" class="java.awt.Image"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="308" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="6e3ae4fb-5a44-452b-ac14-965c18b0e5c2" x="0" y="0" width="194" height="308" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA[$P{pLogoEmpresa}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+</jasperReport>

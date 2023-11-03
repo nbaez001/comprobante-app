@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: '@spring.profiles.active@'
+reportes:
+  files:
+    comprobante: "reports/comprobante.jasper"
+---
+server:
+  port: 8080
+  servlet:
+    context-path: /comprobante-backend
+spring:
+  profiles: dev
+  application:
+    name: comprobante-backend
+---
+spring:
+  profiles: qa
+  application:
+    name: comprobante-backend
+---
+spring:
+  profiles: prd
+  application:
+    name: comprobante-backend

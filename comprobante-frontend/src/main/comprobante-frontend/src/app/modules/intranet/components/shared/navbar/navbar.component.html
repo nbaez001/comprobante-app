@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <a href="javascript:void(0)">
+        <img class="img-responsive" src="./assets/images/icons/perficon.png">
+      </a>
+    </mat-toolbar>
+    <div class="span-usuario">
+      <span>
+        NERIO
+        <br>
+      </span>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/'" routerLinkActive="active-list-item">
+        <mat-icon>home</mat-icon> Comprobantes
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Modulo comprobantes</span>
+
+      <span class="spacer"></span>
+      <button mat-button [matMenuTriggerFor]="usuario">
+        NERIO
+        <!-- <span>(Jefe Unidad Territorial)</span> -->
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu #usuario="matMenu" xPosition="after" [overlapTrigger]="false">
+        <button mat-menu-item>Salir</button>
+      </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
